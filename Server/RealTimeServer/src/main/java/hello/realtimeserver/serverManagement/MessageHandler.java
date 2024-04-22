@@ -2,10 +2,12 @@ package hello.realtimeserver.serverManagement;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 import reactor.netty.NettyInbound;
 import reactor.netty.NettyOutbound;
 
+@Component
 public class MessageHandler {
 
     private static final Logger log = LoggerFactory.getLogger(MessageHandler.class);    // Logger

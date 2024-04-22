@@ -2,10 +2,12 @@ package hello.realtimeserver.serverManagement;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import reactor.netty.Connection;
 
 import java.util.function.Consumer;
 
+@Component
 public class ConnectionHandler implements Consumer<Connection> {
 
 

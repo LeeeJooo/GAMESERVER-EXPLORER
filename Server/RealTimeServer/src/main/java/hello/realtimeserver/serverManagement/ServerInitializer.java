@@ -1,5 +1,6 @@
 package hello.realtimeserver.serverManagement;
 
+import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 import reactor.netty.DisposableServer;
 import reactor.netty.tcp.TcpServer;
@@ -7,6 +8,7 @@ import reactor.netty.tcp.TcpServer;
 /*
  * ServerInitializer : 서버 초기화 클래스
  */
+@Component
 public class ServerInitializer {
 
     private static final int PORT = 1370;
