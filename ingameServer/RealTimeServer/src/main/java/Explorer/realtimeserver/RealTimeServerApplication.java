@@ -1,4 +1,4 @@
-package hello.realtimeserver;
+package Explorer.realtimeserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

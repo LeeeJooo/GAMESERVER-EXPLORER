@@ -1,4 +1,4 @@
-package hello.realtimeserver.serverManagement;
+package Explorer.realtimeserver.serverManagement;
 
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
