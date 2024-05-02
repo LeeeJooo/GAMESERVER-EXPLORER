@@ -15,13 +15,13 @@ public class ConnectionHandler implements Consumer<Connection> {
     @Override
     public void accept(Connection connection) {
 
-        connection.addHandler(new ChannelHandlerAdapter() {
+        connection.addHandlerFirst(new ChannelHandlerAdapter() {
 
             @Override
             public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
 
                 super.handlerRemoved(ctx);
-                log.info("connection lost: {}", connection.channel().remoteAddress());
+                log.info("connection lost First: {}", connection.channel().remoteAddress());
             }
 
         });
