@@ -19,3 +19,15 @@
 - [realtime server] basic setup 로직 구현
 - [realtime server] event branch 로직 구현
 - [realtime server] teamcode generator 로직 구현
+
+24.04.29.월
+- [realtime server] broadcasting 로직과 다른 코드 merge
+
+24.04.30.화
+- [chat server] project 생성
+- [chat server] basic setup 로직 구현
+
+24.05.02.목
+- [realtime server] connection handler 로직 구현
+- [realtime server] cleanUp 로직 설계
+- [realtime server] clenUp 관련 repository 작성
