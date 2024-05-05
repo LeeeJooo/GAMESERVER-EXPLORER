@@ -11,6 +11,7 @@ import com.explorer.realtime.sessionhandling.waitingroom.dto.UserInfo;
 import com.explorer.realtime.sessionhandling.waitingroom.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 import reactor.netty.Connection;
@@ -30,8 +31,10 @@ public class CreateWaitingRoom {
     private final UserRepository userRepository;
     private final Unicasting unicasting;
 
-    public Mono<Void> process(UserInfo userInfo, Connection connection) {
+    public Mono<Void> process(JSONObject json, Connection connection) {
         String teamCode = createTeamCode();
+        json.put("channelId", teamCode);
+        UserInfo userInfo = UserInfo.ofUserIdAndNicknameAndAvatarChannelId(json);
         createConnectionInfo(teamCode, userInfo.getUserId(), connection);
         userRepository.save(userInfo).subscribe();
 
