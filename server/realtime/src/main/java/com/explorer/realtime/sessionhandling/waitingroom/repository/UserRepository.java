@@ -22,7 +22,8 @@ public class UserRepository {
     public Mono<Void> save(UserInfo userInfo) {
         return Mono.when(
                 reactiveHashOperations.put(KEY_PREFIX + userInfo.getUserId(), "nickname", userInfo.getNickname()),
-                reactiveHashOperations.put(KEY_PREFIX + userInfo.getUserId(), "avatar", String.valueOf(userInfo.getAvatar()))
+                reactiveHashOperations.put(KEY_PREFIX + userInfo.getUserId(), "avatar", String.valueOf(userInfo.getAvatar())),
+                reactiveHashOperations.put(KEY_PREFIX + userInfo.getUserId(), "channelId", String.valueOf(userInfo.getChannelId()))
         ).then();
     }
 
