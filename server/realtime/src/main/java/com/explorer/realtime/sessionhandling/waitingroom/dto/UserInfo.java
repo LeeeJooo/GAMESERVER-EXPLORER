@@ -13,6 +13,7 @@ public class UserInfo {
     private Long userId;
     private String nickname;
     private int avatar;
+    private String channelId;
     private boolean isLeader;
 
     public static UserInfo ofUserIdAndNicknameAndAvatar(JSONObject json) {
@@ -20,6 +21,15 @@ public class UserInfo {
                 .userId(json.getLong("userId"))
                 .nickname(json.getString("nickname"))
                 .avatar(json.getInt("avatar"))
+                .build();
+    }
+
+    public static UserInfo ofUserIdAndNicknameAndAvatarChannelId(JSONObject json) {
+        return UserInfo.builder()
+                .userId(json.getLong("userId"))
+                .nickname(json.getString("nickname"))
+                .avatar(json.getInt("avatar"))
+                .channelId(json.getString("channelId"))
                 .build();
     }
 
