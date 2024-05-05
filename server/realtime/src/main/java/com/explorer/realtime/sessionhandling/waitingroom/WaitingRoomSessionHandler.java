@@ -28,7 +28,7 @@ public class WaitingRoomSessionHandler {
         switch(eventName) {
             case "createWaitingRoom" :
                 log.info("create waiting room");
-                createWaitingRoom.process(UserInfo.ofUserIdAndNicknameAndAvatar(json), connection);
+                createWaitingRoom.process(json, connection);
                 break;
 
             case "joinWaitingRoom":
