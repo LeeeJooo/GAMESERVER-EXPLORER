@@ -1,4 +1,4 @@
-package com.explorer.realtime.gamedatahandling.farming.dto;
+package com.explorer.realtime.gamedatahandling.component.common.boxinfo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,19 +7,15 @@ import org.json.JSONObject;
 
 @Getter
 @Builder
-@AllArgsConstructor
-public class ConnectionInfo {
+public class UserConnectionInfo {
 
     private Long userId;
-    private int mapId;
     private String channelId;
 
-    public static ConnectionInfo of(JSONObject json) {
-        return ConnectionInfo.builder()
+    public static UserConnectionInfo of(JSONObject json) {
+        return UserConnectionInfo.builder()
                 .userId(json.getLong("userId"))
-                .mapId(json.getInt("mapId"))
                 .channelId(json.getString("channelId"))
                 .build();
     }
-
 }
