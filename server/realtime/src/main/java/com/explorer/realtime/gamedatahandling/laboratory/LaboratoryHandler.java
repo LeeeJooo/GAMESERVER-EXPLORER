@@ -28,7 +28,7 @@ public class LaboratoryHandler {
                 break;
             case "synthesizing":
                 log.info("eventName : {}", eventName);
-                synthesize.process();
+                synthesize.process(json).subscribe();
                 break;
             case "decomposing":
                 log.info("eventName : {}", eventName);
